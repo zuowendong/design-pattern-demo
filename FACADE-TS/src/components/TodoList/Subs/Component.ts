@@ -4,8 +4,8 @@ abstract class Component {
     protected static inputView(placeholderText: string, buttonText: string): string {
         return `
             <div>
-                <input type="text" class="todInput" placeholder="${placeholderText}" />
-                <button class="todButton">${buttonText}</button>
+                <input type="text" class="todoInput" placeholder="${placeholderText}" />
+                <button class="addButton">${buttonText}</button>
             </div>
         `;
     }
@@ -30,7 +30,7 @@ abstract class Component {
         return `
             <div class="todoItem">
                 <input type="checkbox" data-id="${id}" ${completed ? 'checked' : ''}>
-                <span style="text-decoration: ${completed ? 'line-through': ''}"></span>
+                <span style="text-decoration: ${completed ? 'line-through': ''}">${content}</span>
                 <button data-id="${id}">删除</button>
             </div>
         `;

@@ -1,4 +1,5 @@
 import Component from "./Component";
+import List from "./List";
 
 export interface IInputOptions {
     wrapperEl: HTMLElement;
@@ -20,6 +21,21 @@ class Input extends Component {
             placeholderText,
             buttonText
         )
+    }
+
+    public bindEvent() {
+        const oAddBtn: HTMLElement = document.querySelector(".addButton");
+        const oInput: HTMLElement = document.querySelector(".todoInput");
+        oAddBtn.addEventListener("click", this.handleBtnClick.bind(this, oInput), false);
+    }
+
+    private handleBtnClick(inputDom) {
+        const val: string = inputDom.value.trim();
+
+        if (val.length) {
+            List.addItem(val);
+            inputDom.value = "";
+        }
     }
 
 }

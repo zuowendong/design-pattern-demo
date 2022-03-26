@@ -42,7 +42,8 @@ class TodoList {
     }
 
     private bindEvent() {
-        console.log("bindEvent");
+        this.input.bindEvent();
+        this.list.bindEvent();
     }
 
 }
