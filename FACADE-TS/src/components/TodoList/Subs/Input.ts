@@ -1,6 +1,6 @@
 import Component from "./Component";
 
-export interface IInputOption {
+export interface IInputOptions {
     wrapperEl: HTMLElement;
     placeholderText: string;
     buttonText: string;
@@ -8,8 +8,8 @@ export interface IInputOption {
 
 class Input extends Component {
 
-    private options: IInputOption;
-    constructor(options: IInputOption) {
+    private options: IInputOptions;
+    constructor(options: IInputOptions) {
         super();
         this.options = options;
     }
